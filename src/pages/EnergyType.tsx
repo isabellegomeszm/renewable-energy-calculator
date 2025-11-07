@@ -1,5 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLongLeftIcon, Cog6ToothIcon, InformationCircleIcon, HomeIcon } from '@heroicons/react/24/outline';
+import solarImage from '../assets/solar.png';
+import windImage from '../assets/wind.png';
+
 
 const EnergyType = () => {
   const navigate = useNavigate();
@@ -23,7 +26,7 @@ const EnergyType = () => {
             className="bg-yellow-400 text-black font-bold w-[300px] h-[150px] rounded-md hover:bg-yellow-300 transition flex items-center justify-between text-xl"
           >
             <span style={{ marginLeft: "4rem"}}>Wind</span>
-            <img src="/src/assets/wind.png" alt="wind" className="right-4 h-30" />
+            <img src={windImage} alt="wind energy" className="right-4 h-30" />
           </button>
 
           {/* Botão Solar */}
@@ -32,7 +35,7 @@ const EnergyType = () => {
             className="bg-yellow-400 text-black font-bold w-[300px] h-[150px] rounded-md hover:bg-yellow-300 transition flex items-center justify-between text-xl"
           >
             <span style={{ marginLeft: "4rem"}}>Solar</span>
-            <img src="/src/assets/solar.png" alt="solar" className="right-4 h-30" />
+            <img src={solarImage} alt="solar energy" className="right-4 h-30" />
           </button>
         </div>
       </div>
