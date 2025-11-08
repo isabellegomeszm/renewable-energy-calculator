@@ -29,7 +29,7 @@ const avgElectricData: { [state: string]: number } = {
   "Mato Grosso do Sul": 0.870,
   "Minas Gerais": 0.796,
   Pará: 0.938,
-  Paraíba: 0.722,
+  Paraíba: 0.588,
   Paraná: 0.629,
   Pernambuco: 0.744,
   Piauí: 0.829,
@@ -44,67 +44,68 @@ const avgElectricData: { [state: string]: number } = {
   Tocantins: 0.823,
 };
 
-// Dados por tipo de energia (eólica e solar)
+/// Dados por tipo de energia (eólica e solar) - valores ajustados para o preço final ao consumidor
 const avgData: AvgData = {
   wind: {
-    Acre: { costPerKWh: 0.96, avgConsumption: 250 },
-    Alagoas: { costPerKWh: 0.75, avgConsumption: 220 },
-    Amapá: { costPerKWh: 0.88, avgConsumption: 240 },
-    Amazonas: { costPerKWh: 1.03, avgConsumption: 260 },
-    Bahia: { costPerKWh: 0.66, avgConsumption: 230 },
-    Ceará: { costPerKWh: 0.56, avgConsumption: 240 },
-    "Distrito Federal": { costPerKWh: 0.89, avgConsumption: 270 },
-    "Espírito Santo": { costPerKWh: 0.80, avgConsumption: 230 },
-    Goiás: { costPerKWh: 0.82, avgConsumption: 260 },
-    Maranhão: { costPerKWh: 0.75, avgConsumption: 230 },
-    "Mato Grosso": { costPerKWh: 0.90, avgConsumption: 280 },
-    "Mato Grosso do Sul": { costPerKWh: 0.85, avgConsumption: 270 },
-    "Minas Gerais": { costPerKWh: 0.80, avgConsumption: 240 },
-    Pará: { costPerKWh: 1.00, avgConsumption: 250 },
-    Paraíba: { costPerKWh: 0.65, avgConsumption: 230 },
-    Paraná: { costPerKWh: 0.70, avgConsumption: 280 },
-    Pernambuco: { costPerKWh: 0.60, avgConsumption: 230 },
-    Piauí: { costPerKWh: 0.68, avgConsumption: 220 },
-    "Rio de Janeiro": { costPerKWh: 0.77, avgConsumption: 250 },
-    "Rio Grande do Norte": { costPerKWh: 0.55, avgConsumption: 220 },
-    "Rio Grande do Sul": { costPerKWh: 0.65, avgConsumption: 270 },
-    Rondônia: { costPerKWh: 0.88, avgConsumption: 260 },
-    Roraima: { costPerKWh: 0.95, avgConsumption: 240 },
-    "Santa Catarina": { costPerKWh: 0.78, avgConsumption: 270 },
-    "São Paulo": { costPerKWh: 0.75, avgConsumption: 280 },
-    Sergipe: { costPerKWh: 0.69, avgConsumption: 230 },
-    Tocantins: { costPerKWh: 0.87, avgConsumption: 250 },
+    Acre: { costPerKWh: 0.55, avgConsumption: 250 },
+    Alagoas: { costPerKWh: 0.60, avgConsumption: 220 },
+    Amapá: { costPerKWh: 0.56, avgConsumption: 240 },
+    Amazonas: { costPerKWh: 0.60, avgConsumption: 260 },
+    Bahia: { costPerKWh: 0.58, avgConsumption: 230 },
+    Ceará: { costPerKWh: 0.50, avgConsumption: 240 },
+    "Distrito Federal": { costPerKWh: 0.52, avgConsumption: 270 },
+    "Espírito Santo": { costPerKWh: 0.48, avgConsumption: 230 },
+    Goiás: { costPerKWh: 0.52, avgConsumption: 260 },
+    Maranhão: { costPerKWh: 0.50, avgConsumption: 230 },
+    "Mato Grosso": { costPerKWh: 0.59, avgConsumption: 280 },
+    "Mato Grosso do Sul": { costPerKWh: 0.61, avgConsumption: 270 },
+    "Minas Gerais": { costPerKWh: 0.56, avgConsumption: 240 },
+    Pará: { costPerKWh: 0.69, avgConsumption: 250 },
+    Paraíba: { costPerKWh: 0.41, avgConsumption: 230 },
+    Paraná: { costPerKWh: 0.44, avgConsumption: 280 },
+    Pernambuco: { costPerKWh: 0.52, avgConsumption: 230 },
+    Piauí: { costPerKWh: 0.58, avgConsumption: 220 },
+    "Rio de Janeiro": { costPerKWh: 0.61, avgConsumption: 250 },
+    "Rio Grande do Norte": { costPerKWh: 0.50, avgConsumption: 220 },
+    "Rio Grande do Sul": { costPerKWh: 0.49, avgConsumption: 270 },
+    Rondônia: { costPerKWh: 0.51, avgConsumption: 260 },
+    Roraima: { costPerKWh: 0.47, avgConsumption: 240 },
+    "Santa Catarina": { costPerKWh: 0.43, avgConsumption: 270 },
+    "São Paulo": { costPerKWh: 0.47, avgConsumption: 280 },
+    Sergipe: { costPerKWh: 0.46, avgConsumption: 230 },
+    Tocantins: { costPerKWh: 0.58, avgConsumption: 250 },
   },
   solar: {
-    Acre: { costPerKWh: 0.73, avgConsumption: 250 },
+    Acre: { costPerKWh: 0.59, avgConsumption: 250 },
     Alagoas: { costPerKWh: 0.65, avgConsumption: 220 },
-    Amapá: { costPerKWh: 0.75, avgConsumption: 240 },
-    Amazonas: { costPerKWh: 0.80, avgConsumption: 260 },
-    Bahia: { costPerKWh: 0.55, avgConsumption: 230 },
-    Ceará: { costPerKWh: 0.48, avgConsumption: 240 },
-    "Distrito Federal": { costPerKWh: 0.72, avgConsumption: 270 },
-    "Espírito Santo": { costPerKWh: 0.67, avgConsumption: 230 },
-    Goiás: { costPerKWh: 0.72, avgConsumption: 260 },
-    Maranhão: { costPerKWh: 0.68, avgConsumption: 230 },
-    "Mato Grosso": { costPerKWh: 0.68, avgConsumption: 280 },
-    "Mato Grosso do Sul": { costPerKWh: 0.75, avgConsumption: 270 },
-    "Minas Gerais": { costPerKWh: 0.72, avgConsumption: 240 },
-    Pará: { costPerKWh: 0.78, avgConsumption: 250 },
-    Paraíba: { costPerKWh: 0.61, avgConsumption: 230 },
-    Paraná: { costPerKWh: 0.63, avgConsumption: 280 },
-    Pernambuco: { costPerKWh: 0.59, avgConsumption: 230 },
-    Piauí: { costPerKWh: 0.64, avgConsumption: 220 },
-    "Rio de Janeiro": { costPerKWh: 0.70, avgConsumption: 250 },
-    "Rio Grande do Norte": { costPerKWh: 0.58, avgConsumption: 220 },
-    "Rio Grande do Sul": { costPerKWh: 0.65, avgConsumption: 270 },
-    Rondônia: { costPerKWh: 0.72, avgConsumption: 260 },
-    Roraima: { costPerKWh: 0.75, avgConsumption: 240 },
-    "Santa Catarina": { costPerKWh: 0.67, avgConsumption: 270 },
-    "São Paulo": { costPerKWh: 0.69, avgConsumption: 280 },
-    Sergipe: { costPerKWh: 0.62, avgConsumption: 230 },
-    Tocantins: { costPerKWh: 0.76, avgConsumption: 250 },
+    Amapá: { costPerKWh: 0.61, avgConsumption: 240 },
+    Amazonas: { costPerKWh: 0.64, avgConsumption: 260 },
+    Bahia: { costPerKWh: 0.62, avgConsumption: 230 },
+    Ceará: { costPerKWh: 0.54, avgConsumption: 240 },
+    "Distrito Federal": { costPerKWh: 0.56, avgConsumption: 270 },
+    "Espírito Santo": { costPerKWh: 0.50, avgConsumption: 230 },
+    Goiás: { costPerKWh: 0.56, avgConsumption: 260 },
+    Maranhão: { costPerKWh: 0.53, avgConsumption: 230 },
+    "Mato Grosso": { costPerKWh: 0.60, avgConsumption: 280 },
+    "Mato Grosso do Sul": { costPerKWh: 0.62, avgConsumption: 270 },
+    "Minas Gerais": { costPerKWh: 0.58, avgConsumption: 240 },
+    Pará: { costPerKWh: 0.70, avgConsumption: 250 },
+    Paraíba: { costPerKWh: 0.44, avgConsumption: 230 },
+    Paraná: { costPerKWh: 0.47, avgConsumption: 280 },
+    Pernambuco: { costPerKWh: 0.56, avgConsumption: 230 },
+    Piauí: { costPerKWh: 0.58, avgConsumption: 220 },
+    "Rio de Janeiro": { costPerKWh: 0.61, avgConsumption: 250 },
+    "Rio Grande do Norte": { costPerKWh: 0.54, avgConsumption: 220 },
+    "Rio Grande do Sul": { costPerKWh: 0.50, avgConsumption: 270 },
+    Rondônia: { costPerKWh: 0.61, avgConsumption: 260 },
+    Roraima: { costPerKWh: 0.63, avgConsumption: 240 },
+    "Santa Catarina": { costPerKWh: 0.50, avgConsumption: 270 },
+    "São Paulo": { costPerKWh: 0.53, avgConsumption: 280 },
+    Sergipe: { costPerKWh: 0.50, avgConsumption: 230 },
+    Tocantins: { costPerKWh: 0.61, avgConsumption: 250 },
   },
 };
+
 
 const DataInput = () => {
   const navigate = useNavigate();
@@ -193,19 +194,6 @@ const DataInput = () => {
               </option>
             ))}
           </select>
-
-          <div className="text-gray-400 text-sm flex flex-col gap-3" style={{ marginTop: "-5px", marginBottom: "-15px" }}>
-            <span>
-              Typical cost per kWh: <strong>R${costPerKWh.toFixed(2)}</strong>
-            </span>
-            {/* <span> */}
-              {/* Average consumption: <strong>{avgConsumption} kWh</strong> */}
-            {/* </span> */}
-          </div>
-        
-          <span className="text-gray-700 text-sm italic" >
-            *Values are approximate and may vary by state
-          </span>
         </div>
       </div>
 
