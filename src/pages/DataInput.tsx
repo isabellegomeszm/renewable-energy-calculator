@@ -9,7 +9,7 @@ import {
 
 interface AvgData {
   [key: string]: {
-    [region: string]: { costPerKWh: number; avgConsumption: number };
+    [region: string]: { costPerKWh: number };
   };
 }
 
@@ -47,62 +47,62 @@ const avgElectricData: { [state: string]: number } = {
 /// Dados por tipo de energia (eólica e solar) - valores ajustados para o preço final ao consumidor
 const avgData: AvgData = {
   wind: {
-    Acre: { costPerKWh: 0.55, avgConsumption: 250 },
-    Alagoas: { costPerKWh: 0.60, avgConsumption: 220 },
-    Amapá: { costPerKWh: 0.56, avgConsumption: 240 },
-    Amazonas: { costPerKWh: 0.60, avgConsumption: 260 },
-    Bahia: { costPerKWh: 0.58, avgConsumption: 230 },
-    Ceará: { costPerKWh: 0.50, avgConsumption: 240 },
-    "Distrito Federal": { costPerKWh: 0.52, avgConsumption: 270 },
-    "Espírito Santo": { costPerKWh: 0.48, avgConsumption: 230 },
-    Goiás: { costPerKWh: 0.52, avgConsumption: 260 },
-    Maranhão: { costPerKWh: 0.50, avgConsumption: 230 },
-    "Mato Grosso": { costPerKWh: 0.59, avgConsumption: 280 },
-    "Mato Grosso do Sul": { costPerKWh: 0.61, avgConsumption: 270 },
-    "Minas Gerais": { costPerKWh: 0.56, avgConsumption: 240 },
-    Pará: { costPerKWh: 0.69, avgConsumption: 250 },
-    Paraíba: { costPerKWh: 0.41, avgConsumption: 230 },
-    Paraná: { costPerKWh: 0.44, avgConsumption: 280 },
-    Pernambuco: { costPerKWh: 0.52, avgConsumption: 230 },
-    Piauí: { costPerKWh: 0.58, avgConsumption: 220 },
-    "Rio de Janeiro": { costPerKWh: 0.61, avgConsumption: 250 },
-    "Rio Grande do Norte": { costPerKWh: 0.50, avgConsumption: 220 },
-    "Rio Grande do Sul": { costPerKWh: 0.49, avgConsumption: 270 },
-    Rondônia: { costPerKWh: 0.51, avgConsumption: 260 },
-    Roraima: { costPerKWh: 0.47, avgConsumption: 240 },
-    "Santa Catarina": { costPerKWh: 0.43, avgConsumption: 270 },
-    "São Paulo": { costPerKWh: 0.47, avgConsumption: 280 },
-    Sergipe: { costPerKWh: 0.46, avgConsumption: 230 },
-    Tocantins: { costPerKWh: 0.58, avgConsumption: 250 },
+    Acre: { costPerKWh: 0.55 },
+    Alagoas: { costPerKWh: 0.60 },
+    Amapá: { costPerKWh: 0.56 },
+    Amazonas: { costPerKWh: 0.60 },
+    Bahia: { costPerKWh: 0.58 },
+    Ceará: { costPerKWh: 0.50 },
+    "Distrito Federal": { costPerKWh: 0.52 },
+    "Espírito Santo": { costPerKWh: 0.48 },
+    Goiás: { costPerKWh: 0.52 },
+    Maranhão: { costPerKWh: 0.50 },
+    "Mato Grosso": { costPerKWh: 0.59 },
+    "Mato Grosso do Sul": { costPerKWh: 0.61 },
+    "Minas Gerais": { costPerKWh: 0.56 },
+    Pará: { costPerKWh: 0.69 },
+    Paraíba: { costPerKWh: 0.41 },
+    Paraná: { costPerKWh: 0.44 },
+    Pernambuco: { costPerKWh: 0.52 },
+    Piauí: { costPerKWh: 0.58 },
+    "Rio de Janeiro": { costPerKWh: 0.61 },
+    "Rio Grande do Norte": { costPerKWh: 0.50 },
+    "Rio Grande do Sul": { costPerKWh: 0.49 },
+    Rondônia: { costPerKWh: 0.51 },
+    Roraima: { costPerKWh: 0.47 },
+    "Santa Catarina": { costPerKWh: 0.43 },
+    "São Paulo": { costPerKWh: 0.47 },
+    Sergipe: { costPerKWh: 0.46 },
+    Tocantins: { costPerKWh: 0.58 },
   },
   solar: {
-    Acre: { costPerKWh: 0.59, avgConsumption: 250 },
-    Alagoas: { costPerKWh: 0.65, avgConsumption: 220 },
-    Amapá: { costPerKWh: 0.61, avgConsumption: 240 },
-    Amazonas: { costPerKWh: 0.64, avgConsumption: 260 },
-    Bahia: { costPerKWh: 0.62, avgConsumption: 230 },
-    Ceará: { costPerKWh: 0.54, avgConsumption: 240 },
-    "Distrito Federal": { costPerKWh: 0.56, avgConsumption: 270 },
-    "Espírito Santo": { costPerKWh: 0.50, avgConsumption: 230 },
-    Goiás: { costPerKWh: 0.56, avgConsumption: 260 },
-    Maranhão: { costPerKWh: 0.53, avgConsumption: 230 },
-    "Mato Grosso": { costPerKWh: 0.60, avgConsumption: 280 },
-    "Mato Grosso do Sul": { costPerKWh: 0.62, avgConsumption: 270 },
-    "Minas Gerais": { costPerKWh: 0.58, avgConsumption: 240 },
-    Pará: { costPerKWh: 0.70, avgConsumption: 250 },
-    Paraíba: { costPerKWh: 0.44, avgConsumption: 230 },
-    Paraná: { costPerKWh: 0.47, avgConsumption: 280 },
-    Pernambuco: { costPerKWh: 0.56, avgConsumption: 230 },
-    Piauí: { costPerKWh: 0.58, avgConsumption: 220 },
-    "Rio de Janeiro": { costPerKWh: 0.61, avgConsumption: 250 },
-    "Rio Grande do Norte": { costPerKWh: 0.54, avgConsumption: 220 },
-    "Rio Grande do Sul": { costPerKWh: 0.50, avgConsumption: 270 },
-    Rondônia: { costPerKWh: 0.61, avgConsumption: 260 },
-    Roraima: { costPerKWh: 0.63, avgConsumption: 240 },
-    "Santa Catarina": { costPerKWh: 0.50, avgConsumption: 270 },
-    "São Paulo": { costPerKWh: 0.53, avgConsumption: 280 },
-    Sergipe: { costPerKWh: 0.50, avgConsumption: 230 },
-    Tocantins: { costPerKWh: 0.61, avgConsumption: 250 },
+    Acre: { costPerKWh: 0.59 },
+    Alagoas: { costPerKWh: 0.65 },
+    Amapá: { costPerKWh: 0.61 },
+    Amazonas: { costPerKWh: 0.64 },
+    Bahia: { costPerKWh: 0.62 },
+    Ceará: { costPerKWh: 0.54 },
+    "Distrito Federal": { costPerKWh: 0.56 },
+    "Espírito Santo": { costPerKWh: 0.50 },
+    Goiás: { costPerKWh: 0.56 },
+    Maranhão: { costPerKWh: 0.53 },
+    "Mato Grosso": { costPerKWh: 0.60 },
+    "Mato Grosso do Sul": { costPerKWh: 0.62 },
+    "Minas Gerais": { costPerKWh: 0.58 },
+    Pará: { costPerKWh: 0.70 },
+    Paraíba: { costPerKWh: 0.44 },
+    Paraná: { costPerKWh: 0.47 },
+    Pernambuco: { costPerKWh: 0.56 },
+    Piauí: { costPerKWh: 0.58 },
+    "Rio de Janeiro": { costPerKWh: 0.61 },
+    "Rio Grande do Norte": { costPerKWh: 0.54 },
+    "Rio Grande do Sul": { costPerKWh: 0.50 },
+    Rondônia: { costPerKWh: 0.61 },
+    Roraima: { costPerKWh: 0.63 },
+    "Santa Catarina": { costPerKWh: 0.50 },
+    "São Paulo": { costPerKWh: 0.53 },
+    Sergipe: { costPerKWh: 0.50 },
+    Tocantins: { costPerKWh: 0.61 },
   },
 };
 
@@ -120,7 +120,7 @@ const DataInput = () => {
   const { energyType } = state;
   const [region, setRegion] = useState("Rio de Janeiro");
 
-  const { costPerKWh, avgConsumption } = avgData[energyType][region];
+  const { costPerKWh } = avgData[energyType][region];
   const electricCostPerKWh = avgElectricData[region];
 
   const [formData, setFormData] = useState({
@@ -149,7 +149,7 @@ const DataInput = () => {
     return;
   }
 
-  if (!costPerKWh || !avgConsumption || !electricCostPerKWh) {
+  if (!costPerKWh || !electricCostPerKWh) {
     alert("Missing required data for calculation.");
     return;
   }
@@ -158,7 +158,6 @@ const DataInput = () => {
     state: {
       energyType,
       costPerKWh,
-      avgConsumption,
       electricBillMonthly: electricBill, // Passando o valor correto
       period: period,
       electricCostPerKWh,

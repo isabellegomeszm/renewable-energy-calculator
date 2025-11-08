@@ -42,7 +42,6 @@ const Results = () => {
     energyType = "solar",
     state = "",
     costPerKWh = 0,
-    avgConsumption = 0,
     electricCostPerKWh = 0,
     electricBillMonthly = 0,
     period = 1,  // Garantir que 'period' tenha valor padrão
@@ -50,10 +49,9 @@ const Results = () => {
 
   // Calcular o consumo mensal de energia caso o usuário não tenha informado
   const calculatedMonthlyConsumption = electricBillMonthly / electricCostPerKWh;
-  const monthlyConsumption = avgConsumption || calculatedMonthlyConsumption;
 
   // Cálculos de faturas e economia
-  const energyBillMonthlyValue = monthlyConsumption * costPerKWh;
+  const energyBillMonthlyValue = calculatedMonthlyConsumption * costPerKWh;
   const monthlySavings = electricBillMonthly - energyBillMonthlyValue;
   const validMonthlySavings = monthlySavings > 0 ? monthlySavings : 0;
   const totalSavings = validMonthlySavings * period * 12;
