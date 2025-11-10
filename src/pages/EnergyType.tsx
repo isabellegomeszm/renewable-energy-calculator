@@ -41,19 +41,20 @@ const EnergyType = () => {
       </div>
 
       {/* Menu inferior */}
-      <footer className="bg-black py-3 flex justify-around items-center fixed bottom-0 left-0 w-full">
+      <footer className="bg-black py-3 flex justify-around items-center fixed bottom-0 left-0 w-full z-20">
         <button onClick={() => navigate(-1)}>
-          <ArrowLongLeftIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
-        </button>
-        <button onClick={() => navigate("/settings")}>
-          <Cog6ToothIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
-        </button>
-        <button onClick={() => navigate("/profile")}>
-          <InformationCircleIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
+          <ArrowLongLeftIcon className="w-12 h-12 text-white hover:text-yellow-400 transition" />
         </button>
         <button onClick={() => navigate("/home")}>
-          <HomeIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
+          <HomeIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
         </button>
+        {/* <button onClick={() => navigate("/settings")}> */}
+          {/* <Cog6ToothIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" /> */}
+        {/* </button> */}
+        <button onClick={() => navigate("/profile")}>
+          <InformationCircleIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
+        </button>
+        
       </footer>
     </div>
   );

@@ -1,3 +1,17 @@
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {},
+  },
+  corePlugins: {
+    preflight: true,
+  },
+  future: {
+    // 🔧 força Tailwind a não usar cores oklch
+    disableColorOpacityUtilitiesByDefault: false,
+  },
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [

@@ -156,6 +156,7 @@ const DataInput = () => {
 
   navigate("/results", {
     state: {
+      region,
       energyType,
       costPerKWh,
       electricBillMonthly: electricBill, // Passando o valor correto
@@ -213,7 +214,7 @@ const DataInput = () => {
 
         <button
           onClick={handleCalculate}
-          className="w-50 h-10 bg-gray-800 text-white font-bold py-3 rounded-[50px] hover:bg-green-300 transition mt-6"
+          className="w-50 h-10 bg-blue-900 text-white font-bold py-3 rounded-[50px] hover:bg-green-300 transition mt-6"
         >
           Calculate
         </button>
@@ -221,16 +222,16 @@ const DataInput = () => {
 
       <footer className="bg-black py-3 flex justify-around items-center fixed bottom-0 left-0 w-full z-20">
         <button onClick={() => navigate(-1)}>
-          <ArrowLongLeftIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
-        </button>
-        <button onClick={() => navigate("/settings")}>
-          <Cog6ToothIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
-        </button>
-        <button onClick={() => navigate("/profile")}>
-          <InformationCircleIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
+          <ArrowLongLeftIcon className="w-12 h-12 text-white hover:text-yellow-400 transition" />
         </button>
         <button onClick={() => navigate("/home")}>
-          <HomeIcon className="w-6 h-6 text-white hover:text-yellow-400 transition" />
+          <HomeIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
+        </button>
+        {/* <button onClick={() => navigate("/settings")}> */}
+          {/* <Cog6ToothIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" /> */}
+        {/* </button> */}
+        <button onClick={() => navigate("/profile")}>
+          <InformationCircleIcon className="w-10 h-10 text-white hover:text-yellow-400 transition" />
         </button>
       </footer>
     </div>
